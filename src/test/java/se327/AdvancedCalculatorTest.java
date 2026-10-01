@@ -1,6 +1,7 @@
 package se327;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Test;
 
 class AdvancedCalculatorTest {
@@ -14,5 +15,11 @@ class AdvancedCalculatorTest {
     void testSqrt() {
         AdvancedCalculator calculator = new AdvancedCalculator();
         assertEquals(2.0, calculator.sqrt(4), 0.01);
+    }
+
+    @Test
+    void testSqrtNegative() {
+        AdvancedCalculator calculator = new AdvancedCalculator();
+        assertThrows(IllegalArgumentException.class, () -> calculator.sqrt(-1));
     }
 }
