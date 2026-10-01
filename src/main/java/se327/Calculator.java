@@ -1,7 +1,6 @@
-package com.se327;
+package se327;
 
 public class Calculator {
-
     public int add(int a, int b) {
         return a + b;
     }
@@ -14,15 +13,10 @@ public class Calculator {
         return a * b;
     }
 
-    public double divide(int a, int b) {
-        return a / b;
-    }
-
-    public boolean isEven(int number) {
-        if (number % 2 == 0) {
-            return true;
-        } else {
-            return false;
+    public double divide(int a, int b) throws IllegalArgumentException {
+        if (b == 0) {
+            throw new IllegalArgumentException("Division by zero is not allowed.");
         }
+        return (double) a / b;
     }
 }
